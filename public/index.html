@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draw with friends</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <ul
+      class="flex items-center justify-center gap-4 p-4 bg-gray-200 w-100 rounded fixed top-4 left-1/2 -translate-x-1/2 z-10 shadow"
+    >
+      <li
+        onclick="changeTool('Pain')"
+        class="cursor-pointer hover:bg-gray-100 p-2 rounded duration-300 transition-colors ease"
+      >
+        Pain 🖌️
+      </li>
+      <li
+        onclick="changeTool('Eraser')"
+        class="cursor-pointer hover:bg-gray-100 p-2 rounded duration-300 transition-colors ease"
+      >
+        Eraser 🧹
+      </li>
+      <li
+        class="cursor-pointer hover:bg-gray-100 p-2 rounded duration-300 transition-colors ease text-center"
+      >
+        Size ➕
+        <input
+          type="range"
+          min="5"
+          max="200"
+          value="10"
+          class="inp-size"
+          onchange="changeSize(this.value)"
+        />
+        <input
+          type="text"
+          value="10"
+          onchange="changeSize(this.value)"
+          class="inp-size text-center w-20"
+        />
+      </li>
+
+      <li
+        onclick="clearCanvas()"
+        class="cursor-pointer hover:bg-gray-100 p-2 rounded duration-300 transition-colors ease"
+      >
+        Clear 🗑️
+      </li>
+    </ul>
+    <canvas id="myCanvas"></canvas>
+    <script src="draw.js"></script>
+  </body>
+</html>
